@@ -1,0 +1,227 @@
+@font-face {
+  font-family: "Poppins";
+  src: url("./assets/fonts/poppins/Poppins-Regular.woff2") format("woff2"),
+    url("./assets/fonts/poppins/Poppins-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("./assets/fonts/poppins/Poppins-Bold.woff2") format("woff2"),
+    url("./assets/fonts/poppins/Poppins-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("./assets/fonts/poppins/Poppins-ExtraBold.woff2") format("woff2"),
+    url("./assets/fonts/poppins/Poppins-ExtraBold.woff2") format("woff");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --body-bg: hsl(0, 0%, 94%);
+  --white: hsl(0, 0%, 100%);
+  --black: hsl(0, 0%, 8%);
+  --light-grey: hsl(0, 0%, 86%);
+  --dark-grey: hsl(0, 1%, 44%);
+  --primary: hsl(259, 100%, 65%);
+  --secondary: hsl(0, 100%, 67%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: var(--body-bg);
+  color: var(--black);
+}
+
+#root {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+input[type="number"] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.content-box {
+  background-color: var(--white);
+  padding: 40px;
+  border-radius: 20px 20px 100px 20px;
+  max-width: 650px;
+  width: 100%;
+}
+
+.date-form {
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  gap: 20px;
+  padding-bottom: 35px;
+  border-bottom: 1px solid var(--light-grey);
+  position: relative;
+}
+
+.form-field__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  gap: 7px;
+}
+
+.field-label {
+  color: var(--dark-grey);
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.form-field {
+  font-size: 22px;
+  font-weight: 700;
+  outline: none;
+  border: 1px solid var(--light-grey);
+  border-radius: 8px;
+  padding: 10px 15px;
+  max-width: 140px;
+  width: 100%;
+  cursor: pointer;
+  appearance: none;
+  transition: border 0.2s linear;
+}
+
+.form-field:hover,
+.form-field:focus {
+  border-color: var(--primary);
+}
+
+.form-field::placeholder {
+  color: var(--dark-grey);
+}
+
+.form-field__error .field-label {
+  color: var(--secondary);
+}
+
+.form-field__error .form-field {
+  border-color: var(--secondary);
+}
+
+.error-message {
+  font-size: 12px;
+  font-style: italic;
+  color: var(--secondary);
+}
+
+.form-submit__button {
+  width: 68px;
+  height: 68px;
+  background-color: var(--black);
+  color: var(--white);
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  transform: translateY(-50%);
+  transition: background 0.2s linear;
+}
+
+.form-submit__button img {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+}
+
+.form-submit__button:hover {
+  background-color: var(--primary);
+}
+
+.date-output-box {
+  margin-top: 25px;
+}
+
+.date-output {
+  font-size: 72px;
+  line-height: 1.2;
+  font-weight: 800;
+  font-style: italic;
+}
+
+.date-value {
+  color: var(--primary);
+}
+
+@media screen and (max-width: 576px) {
+  .content-box {
+    padding: 35px 20px;
+    width: 92%;
+  }
+
+  .date-form {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    padding-bottom: 38px;
+  }
+
+  .error-message {
+    font-size: 10px;
+  }
+
+  .form-field {
+    font-size: 20px;
+    padding: 8px 12px;
+  }
+
+  .form-submit__button {
+    width: 55px;
+    height: 55px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .form-submit__button img {
+    width: 25px;
+    height: 25px;
+  }
+
+  .date-output-box {
+    margin-top: 40px;
+  }
+
+  .date-output {
+    font-size: 52px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .date-output {
+    font-size: 44px;
+  }
+}
